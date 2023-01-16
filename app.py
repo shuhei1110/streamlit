@@ -5,15 +5,15 @@ from model import predict
 
 st.set_option("deprecation.showfileUploaderEncoding", False)
 
-st.sidebar.title("画像認識Webアプリケーション")
-st.sidebar.write("ディープラーニングで画像の中に何が写っているか認識することができます．")
+st.title("画像認識Webアプリケーション")
+st.write("ディープラーニングで画像の中に何が写っているか認識することができます．")
 
-st.sidebar.write("")
+st.write("")
 
-img_source = st.sidebar.radio("画像のソースを選択",
+img_source = st.radio("画像のソースを選択",
                               ("画像アップロード", "カメラ撮影"))
 if img_source == "画像アップロード":
-    img_file = st.sidebar.file_uploader("画像を選択してください．", type=["png", "jpg"])
+    img_file = st.file_uploader("画像を選択してください．", type=["png", "jpg"])
 elif img_source == "カメラ撮影":
     img_file = st.camera_input("カメラ撮影")
 
